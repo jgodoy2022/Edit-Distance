@@ -20,9 +20,9 @@
 #include "utils.cpp"
 
 // Include to be tested files here
-#include "dp.cpp"
-#include "memo.cpp"
-#include "recursive.cpp"
+#include "../dp.cpp"
+#include "../memo.cpp"
+#include "../recursive.cpp"
 
 int main(int argc, char *argv[])
 {
@@ -59,7 +59,9 @@ int main(int argc, char *argv[])
         time_stdev = 0;
 
         // Test configuration goes here
-        
+        std::string s1 = "intention";
+        std::string s2 = "algorithm";
+        std::cout << editDistance(s1, s2);
 
         // Run to compute elapsed time
         for (i = 0; i < runs; i++) {
