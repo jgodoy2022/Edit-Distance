@@ -2,11 +2,10 @@
 #include <algorithm>
 #include <vector>
 #include <string>
-using namespace std;
 
 // Función recursiva que calcula la cantidad de operaciones necesarias
 // para convertir s1 en s2.
-int editDistRec(string& s1, string& s2, int m, int n, vector<vector<int>> &memo){
+int editDistRec(std::string& s1, std::string& s2, int m, int n, std::vector<std::vector<int>> &memo){
 
   // Si s1 está vacío, retorna n porque necesita n inserciones 
   // para transformar s1 a s2. 
@@ -33,27 +32,27 @@ int editDistRec(string& s1, string& s2, int m, int n, vector<vector<int>> &memo)
 
   // Si los últimos caracteres son diferentes, se toma el 
   // mínimo de las dos operaciones y se suma 1. 
-  return memo[m][n] = 1 + min({editDistRec(s1, s2, m, n-1, memo),
+  return memo[m][n] = 1 + std::min({editDistRec(s1, s2, m, n-1, memo),
                               editDistRec(s1, s2, m-1, n, memo)});
 }
 
 
 // Función que inicia el calculo recursivo
-int editDistance(string& s1, string& s2){
+int editDistance(std::string& s1, std::string& s2){
   int m = s1.length(), n = s2.length();
 
   // Inicializa la tabla(matriz) con -1. 
-  vector<vector<int>> memo(m+1, vector<int>(n+1, -1)); 
+  std::vector<std::vector<int>> memo(m+1, std::vector<int>(n+1, -1)); 
   return editDistRec(s1, s2, m, n, memo); 
 }
 
 
 int main(){
 
-  string s1 = "intention";
-  string s2 = "algorithm";
+  std::string s1 = "intention";
+  std::string s2 = "algorithm";
 
-  cout << editDistance(s1, s2);
+  std::cout << editDistance(s1, s2);
 
   return 0;
 }

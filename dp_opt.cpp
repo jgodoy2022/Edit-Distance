@@ -1,15 +1,14 @@
 // C++ program to find minimum number
 // of operations to convert s1 to s2
 #include <bits/stdc++.h>
-using namespace std;
 
-int editDistance(string &s1, string &s2) {
+int editDistance(std::string &s1, std::string &s2) {
     int m = s1.size();
     int n = s2.size();
     
     // Stores dp[i-1][j-1]
     int prev; 
-    vector<int> curr(n + 1, 0); 
+    std::vector<int> curr(n + 1, 0); 
 
     for (int j = 0; j <= n; j++)
         curr[j] = j;
@@ -22,7 +21,7 @@ int editDistance(string &s1, string &s2) {
             if (s1[i - 1] == s2[j - 1])
                 curr[j] = prev;
             else
-                curr[j] = 1 + min({curr[j - 1], prev, curr[j]});
+                curr[j] = 1 + std::min({curr[j - 1], prev, curr[j]});
             prev = temp;
         }
     }
@@ -31,10 +30,10 @@ int editDistance(string &s1, string &s2) {
 }
 
 int main() {
-    string s1 = "abcd";
-    string s2 = "bcfe";
+    std::string s1 = "abcd";
+    std::string s2 = "bcfe";
 
-    cout << editDistance(s1, s2);
+    std::cout << editDistance(s1, s2);
 
     return 0;
 }

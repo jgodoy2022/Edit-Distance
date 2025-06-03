@@ -1,13 +1,12 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-using namespace std;
 
 // Función recursiva para encontrar la cantidad de operaciones
 // necesarias para convertir un string s1 en un string s2
 // Input: s1 y s2 strings, m y n sus largos respectivamente
 // Output: cantidad mínima de operaciones para llegar de un string a otro
-int editDistRec(string& s1, string& s2, int m, int n) {
+int editDistRec(std::string& s1, std::string& s2, int m, int n) {
   
     // Si el primer string esta vacio inserta todos
     // los caracteres del segundo string en el primero
@@ -24,21 +23,21 @@ int editDistRec(string& s1, string& s2, int m, int n) {
 
     // Si los ultimos caracteres no son los mismos calcular el minimo entre
     // insertar un caracter en s1 o eliminar un caracter en s1
-    return 1 + min({editDistRec(s1, s2, m, n - 1),  
+    return 1 + std::min({editDistRec(s1, s2, m, n - 1),  
                     editDistRec(s1, s2, m - 1, n)}); 
 }
 
 // Funcion para iniciar el calculo recursivo
-int editDistance(string& s1, string& s2) {
+int editDistance(std::string& s1, std::string& s2) {
     return editDistRec(s1, s2, s1.length(), s2.length());
 }
 
 int main() {
     
-    string s1 = "intention";
-    string s2 = "algorithm";
+    std::string s1 = "intention";
+    std::string s2 = "algorithm";
 
-    cout << editDistance(s1, s2);
+    std::cout << editDistance(s1, s2);
 
     return 0;
 }

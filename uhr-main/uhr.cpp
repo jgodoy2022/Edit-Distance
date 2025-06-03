@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
         time_stdev = 0;
 
         // Test configuration goes here
+        
 
         // Run to compute elapsed time
         for (i = 0; i < runs; i++) {
