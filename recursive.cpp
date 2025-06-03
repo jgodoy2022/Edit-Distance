@@ -5,6 +5,8 @@ using namespace std;
 
 // Función recursiva para encontrar la cantidad de operaciones
 // necesarias para convertir un string s1 en un string s2
+// Input: s1 y s2 strings, m y n sus largos respectivamente
+// Output: cantidad mínima de operaciones para llegar de un string a otro
 int editDistRec(string& s1, string& s2, int m, int n) {
   
     // Si el primer string esta vacio inserta todos
