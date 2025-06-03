@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-int editDistance(std::string &s1, std::string &s2){
+int editDistanceDp(std::string &s1, std::string &s2){
 
   int m = s1.length();
   int n = s2.length();
@@ -34,13 +34,14 @@ int editDistance(std::string &s1, std::string &s2){
 
   return dp[m][n];
 }
-
+/*
 int main(){
   
   std::string s1 = "intention";
   std::string s2 = "algorithm";
 
-  std::cout << editDistance(s1, s2);
+  std::cout << editDistanceDp(s1, s2);
 
   return 0;
 }
+*/

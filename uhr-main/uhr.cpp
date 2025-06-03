@@ -57,11 +57,62 @@ int main(int argc, char *argv[])
     for (n = lower; n <= upper; n += step) {
         mean_time = 0;
         time_stdev = 0;
-
         // Test configuration goes here
-        std::string s1 = "intention";
-        std::string s2 = "algorithm";
-        std::cout << editDistance(s1, s2);
+
+
+        std::string s1 = "quijada quesada";
+        std::string s2 = "don quijote de la mancha";
+        std::string s3 = "en un lugar de la mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor";
+        std::string s4 = "y, diciendo esto, dio de espuelas a su caballo rocinante, sin atender a las voces que su escudero sancho le daba, advirtiéndole que, sin duda alguna, eran molinos de viento, y no gigantes, aquellos que iba a acometer. pero él iba tan puesto en que eran gigantes, que ni oía las voces de su escudero sancho ni echaba de ver, aunque estaba ya bien cerca, lo que eran; antes, iba diciendo en voces altas: non fuyades, cobardes y viles criaturas, que un solo caballero es el que os acomete";
+
+        /******************************
+         ***Test algoritmo recursivo***
+         ******************************/
+/*
+        // todas las transiciones posibles para recursive: 
+        std::cout << editDistanceRecInit(s1, s2);
+        std::cout << editDistanceRecInit(s1, s3);
+        std::cout << editDistanceRecInit(s1, s4);
+        std::cout << editDistanceRecInit(s2, s3);
+        std::cout << editDistanceRecInit(s2, s4);
+        std::cout << editDistanceRecInit(s3, s4);
+*/
+
+        /************************************
+         ***Test algoritmo con memoization***
+         ************************************/
+/*
+        std::cout << editDistanceMemoInit(s1, s2);
+        std::cout << editDistanceMemoInit(s1, s3);
+        std::cout << editDistanceMemoInit(s1, s4);
+        std::cout << editDistanceMemoInit(s2, s3);
+        std::cout << editDistanceMemoInit(s2, s4);
+        std::cout << editDistanceMemoInit(s3, s4);
+*/
+
+        /***************************
+         ***Test algoritmo con DP***
+         ***************************/
+/*
+        std::cout << editDistanceDp(s1, s2);
+        std::cout << editDistanceDp(s1, s3);
+        std::cout << editDistanceDp(s1, s4);
+        std::cout << editDistanceDp(s2, s3);
+        std::cout << editDistanceDp(s2, s4);
+        std::cout << editDistanceDp(s3, s4);
+*/
+
+        /*******************************
+         ***Test algoritmo con DP-opt***
+         *******************************/
+/*
+        std::cout << editDistanceOpt(s1, s2);
+        std::cout << editDistanceOpt(s1, s3);
+        std::cout << editDistanceOpt(s1, s4);
+        std::cout << editDistanceOpt(s2, s3);
+        std::cout << editDistanceOpt(s2, s4);
+        std::cout << editDistanceOpt(s3, s4);
+*/
 
         // Run to compute elapsed time
         for (i = 0; i < runs; i++) {

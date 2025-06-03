@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 
+
 // Calcula la distancia de edicion entre s1 y s2,
 // considerando solo inserciones y eliminaciones.
-int editDistance(std::string &s1, std::string &s2) {
-
-    // Largo de las cadenas
+int editDistanceOpt(std::string &s1, std::string &s2) {
+    // largo de las cadenas
     int m = s1.size();
     int n = s2.size();
     
@@ -43,12 +43,13 @@ int editDistance(std::string &s1, std::string &s2) {
     // Distancia de edicion completa
     return curr[n];
 }
-
+/*
 int main() {
     std::string s1 = "intention";
     std::string s2 = "execution";
 
-    std::cout << editDistance(s1, s2);
+    std::cout << editDistanceOpt(s1, s2);
 
     return 0;
 }
+*/

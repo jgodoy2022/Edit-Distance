@@ -28,16 +28,17 @@ int editDistRec(std::string& s1, std::string& s2, int m, int n) {
 }
 
 // Funcion para iniciar el calculo recursivo
-int editDistance(std::string& s1, std::string& s2) {
+int editDistanceRecInit(std::string& s1, std::string& s2) {
     return editDistRec(s1, s2, s1.length(), s2.length());
 }
-
+/*
 int main() {
     
     std::string s1 = "intention";
     std::string s2 = "algorithm";
 
-    std::cout << editDistance(s1, s2);
+    std::cout << editDistanceRecInit(s1, s2);
 
     return 0;
 }
+*/
