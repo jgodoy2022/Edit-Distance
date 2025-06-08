@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-
+#include <chrono>
 // Función recursiva para encontrar la cantidad de operaciones
 // necesarias para convertir un string s1 en un string s2
 // Input: s1 y s2 strings, m y n sus largos respectivamente
@@ -33,12 +33,17 @@ int editDistanceRecInit(std::string& s1, std::string& s2) {
 }
 /*
 int main() {
-    
-    std::string s1 = "intention";
-    std::string s2 = "algorithm";
+    std::string s1 = "quijada quesada";
+    std::string s3 = "en un lugar de la mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor";
+  
+ 
+    auto start = std::chrono::high_resolution_clock::now();
+    std::cout << editDistanceRecInit(s1, s3);
+    auto end = std::chrono::high_resolution_clock::now();
 
-    std::cout << editDistanceRecInit(s1, s2);
+    std::chrono::duration<double> duration = end - start;
 
+    std::cout << "Tiempo de ejecución: " << duration.count() << " segundos" << std::endl;
     return 0;
 }
 */
